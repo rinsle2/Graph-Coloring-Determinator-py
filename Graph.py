@@ -26,7 +26,7 @@ class Graph:
         val = self.nodeCount
         for i in range(val):
             self.checks.append(True)
-
+    # Swapping the >= for > is your initial state for this test, figure out what's wrong with this, find the pattern and fix it
     # Something is missing here, can you find what's missing? (I know what's missing, this is now everyone else's test)
     def __checkMatrix(self, li: list, c):
         length = len(li)
