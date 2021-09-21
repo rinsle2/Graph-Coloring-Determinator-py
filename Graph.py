@@ -1,3 +1,8 @@
+def make_graph():
+    graph = Graph()
+    return graph
+
+
 class Graph:
     nodeCount = 0
     nodeMap = {}
@@ -7,10 +12,6 @@ class Graph:
         self.nodeCount = 0
         self.nodeMap = {}
         self.checks = []
-
-    def make_graph(self):
-        graph = Graph()
-        return graph
     
     def add_vertex(self, val):
         self.nodeMap[val] = []
