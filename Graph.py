@@ -37,6 +37,8 @@ class Graph:
     # Something is missing here, can you find what's missing? (I know what's missing, this is now everyone else's test)
     def __check_matrix(self, li: list, c):
         length = len(li)
+        if length == 0:
+            return
         if (length == self.nodeCount - 1 or self.nodeCount > c) and length >= c:
             for i in range(len(self.checks)):
                 if self.checks[i]:
@@ -52,8 +54,14 @@ class Graph:
                 return True
         return False
 
+    def __row_counts(self, li: list):
+        if li == []:
+            self.nodeCount -= 1
+        
     def is_colorable(self, c):
         self.__populate()
+        for k in self.nodeMap:
+            self.__row_Counts(self.nodeMap[k], c)
         for k in self.nodeMap:
             self.__check_matrix(self.nodeMap[k], c)
         return not self.__subset_true(c)
